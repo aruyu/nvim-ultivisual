@@ -1,6 +1,6 @@
 ## Neovim Ultivisual
 
-### A visual mode plugin written by Lua Script
+### A visual mode plugin for neovim written by Lua Script
 
 ## Features
 
@@ -28,7 +28,7 @@ EOF
 
 ## Configuration
 
-You can config the indent settings by the following options.
+You can setup the features by the following options.
 
 ```lua
 -- Default options.
