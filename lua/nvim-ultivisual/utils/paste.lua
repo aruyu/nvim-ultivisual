@@ -9,12 +9,11 @@
 
 
 
+require("nvim-ultivisual.string")
+
 local M = {}
 local keyset = vim.keymap.set
 local noremap_opt = { noremap = true }
-local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
 
 
 function M.do_group_paste()
@@ -22,25 +21,33 @@ function M.do_group_paste()
   local line_end = vim.fn.line("'>")
   local col_start = vim.fn.col("'<")
   local col_end = vim.fn.col("'>")
+  local yanked = vim.fn.getreg('"'):split('\n')
 
-  local combined_line
+  local front_line, back_line
+  local lines_table = {}
+  local cursor_pos = { (line_start-1)+(#yanked) }
 
-  combined_line = vim.fn.getline(line_start):sub(1, col_start-1) .. vim.fn.getline(line_end):sub(col_end+1)
+  front_line = vim.fn.getline(line_start):sub(1, col_start-1)
+  back_line = vim.fn.getline(line_end):sub(col_end+1)
 
-  if line_start == line_end then
-    vim.fn.setline(line_start, combined_line)
-
-    vim.cmd('call cursor("' .. line_start .. '","' .. col_start-1 .. '")')
-    vim.api.nvim_feedkeys(t('p<ESC>'), 'n', true)
+  if #yanked == 1 then
+    table.insert(lines_table, front_line .. yanked[1] .. back_line)
+    table.insert(cursor_pos, front_line .. yanked[1]:len())
 
   else
-    vim.cmd('call nvim_buf_set_lines(0,' .. line_start-1 .. ',' .. line_end ..
-      ',v:true,["' .. combined_line .. '"])'
-    )
+    front_line = front_line .. yanked[1]
+    back_line = yanked[#yanked] .. back_line
+    table.insert(cursor_pos, yanked[#yanked]:len())
 
-    vim.cmd('call cursor("' .. line_start .. '","' .. col_start-1 .. '")')
-    vim.api.nvim_feedkeys(t('p<ESC>'), 'n', true)
+    lines_table = yanked
+    table.remove(lines_table, 1)
+    table.remove(lines_table, #yanked)
+    table.insert(lines_table, 1, front_line)
+    table.insert(lines_table, back_line)
   end
+
+  vim.api.nvim_buf_set_lines(0, line_start-1, line_end, true, lines_table)
+  vim.api.nvim_call_function('cursor', cursor_pos)
 end
 
 

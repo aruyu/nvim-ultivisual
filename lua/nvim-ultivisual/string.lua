@@ -21,6 +21,19 @@ function string:endswith(ending)
   return ending == "" or self:sub(-#ending) == ending
 end
 
+function string:split(delimiter)
+  local retval = {}
+  local from = 1
+  local delim_from, delim_to = self:find(delimiter, from)
+  while delim_from do
+    table.insert(retval, self:sub(from , delim_from-1))
+    from = delim_to + 1
+    delim_from, delim_to = self:find(delimiter, from)
+  end
+  table.insert(retval, self:sub(from))
+  return retval
+end
+
 function string:replace(old, new)
   local postfix, retval
   local search_start_idx = 1
