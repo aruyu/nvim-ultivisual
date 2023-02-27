@@ -31,8 +31,9 @@ function M.do_group_paste()
   back_line = vim.fn.getline(line_end):sub(col_end+1)
 
   if #yanked == 1 then
-    table.insert(lines_table, front_line .. yanked[1] .. back_line)
-    table.insert(cursor_pos, front_line .. yanked[1]:len())
+    front_line = front_line .. yanked[1]
+    table.insert(cursor_pos, front_line:len())
+    table.insert(lines_table, front_line .. back_line)
 
   else
     front_line = front_line .. yanked[1]
