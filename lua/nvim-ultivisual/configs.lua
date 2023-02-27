@@ -24,12 +24,12 @@ local default_options = {
   keymaps = {
     make_indent = {
       key = '<TAB>',
-      modes = { 'v','n' },
+      modes = { 'v','n' }, -- 'v'; visual, 'n'; normal, 'i'; insert
     },
 
     delete_indent = {
       key = '<S-TAB>',
-      modes = { 'v','n' },
+      modes = { 'v','n' }, -- 'v'; visual, 'n'; normal, 'i'; insert
     },
 
     delimiter = {
@@ -38,7 +38,10 @@ local default_options = {
       { key = '{', shape = { '{','}' } },
     },
 
-    paste = { key = '<C-V>' },
+    paste = {
+      key = '<C-V>',
+      modes = { 'v','n','i' }, -- 'v'; visual, 'n'; normal, 'i'; insert
+    },
   },
 }
 
