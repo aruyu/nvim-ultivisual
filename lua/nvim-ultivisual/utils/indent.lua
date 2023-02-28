@@ -100,39 +100,39 @@ function M.delete_group_indent(novisual)
 end
 
 
-function M.set_keymaps(make_indent, delete_indent)
-  for _, mode in ipairs(make_indent.modes) do
+function M.set_keymaps(make_keymaps, delete_keymaps)
+  for _, mode in ipairs(make_keymaps.modes) do
     if mode == 'v' then
-      keyset('v', make_indent.key,
+      keyset('v', make_keymaps.key,
         ':<ESC>:lua require("nvim-ultivisual.utils.indent").make_group_indent()<CR>',
         noremap_opt
       )
     elseif mode == 'n' then
-      keyset('n', make_indent.key,
+      keyset('n', make_keymaps.key,
         'v:<ESC>:lua require("nvim-ultivisual.utils.indent").make_group_indent()<CR>',
         noremap_opt
       )
     elseif mode == 'i' then
-      keyset('i', make_indent.key,
+      keyset('i', make_keymaps.key,
         '<ESC><ESC>v:<ESC>:lua require("nvim-ultivisual.utils.indent").make_group_indent(true)<CR>',
         noremap_opt
       )
     end
   end
 
-  for _, mode in ipairs(delete_indent.modes) do
+  for _, mode in ipairs(delete_keymaps.modes) do
     if mode == 'v' then
-      keyset('v', delete_indent.key,
+      keyset('v', delete_keymaps.key,
         ':<ESC>:lua require("nvim-ultivisual.utils.indent").delete_group_indent()<CR>',
         noremap_opt
       )
     elseif mode == 'n' then
-      keyset('n', delete_indent.key,
+      keyset('n', delete_keymaps.key,
         'v:<ESC>:lua require("nvim-ultivisual.utils.indent").delete_group_indent()<CR>',
         noremap_opt
       )
     elseif mode == 'i' then
-      keyset('i', delete_indent.key,
+      keyset('i', delete_keymaps.key,
         '<ESC><ESC>v:<ESC>:lua require("nvim-ultivisual.utils.indent").delete_group_indent(true)<CR>',
         noremap_opt
       )

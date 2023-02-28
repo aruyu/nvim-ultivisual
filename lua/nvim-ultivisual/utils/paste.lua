@@ -98,20 +98,20 @@ function M.do_insert_paste()
 end
 
 
-function M.set_keymaps(paste)
-  for _, mode in ipairs(paste.modes) do
+function M.set_keymaps(keymaps)
+  for _, mode in ipairs(keymaps.modes) do
     if mode == 'v' then
-      keyset('v', paste.key,
+      keyset('v', keymaps.key,
         ':<ESC>:lua require("nvim-ultivisual.utils.paste").do_visual_paste()<CR>',
         noremap_opt
       )
     elseif mode == 'n' then
-      keyset('n', paste.key,
+      keyset('n', keymaps.key,
         '<CMD>lua require("nvim-ultivisual.utils.paste").do_normal_paste()<CR>',
         noremap_opt
       )
     elseif mode == 'i' then
-      keyset('i', paste.key,
+      keyset('i', keymaps.key,
         '<CMD>lua require("nvim-ultivisual.utils.paste").do_insert_paste()<CR>',
         noremap_opt
       )
