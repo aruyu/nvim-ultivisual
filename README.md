@@ -36,7 +36,7 @@ require("nvim-ultivisual").setup({
   --
   features = {
     indent = true,
-    delimiter = true,
+    bracket = true,
     paste = true,
   },
 
@@ -52,7 +52,7 @@ require("nvim-ultivisual").setup({
       modes = { 'v','n' }, -- 'v'; visual, 'n'; normal, 'i'; insert
     },
 
-    delimiter = {
+    bracket = {
       { key = '(', shape = { '(',')' } },
       { key = '[', shape = { '[',']' } },
       { key = '{', shape = { '{','}' } },
@@ -61,6 +61,14 @@ require("nvim-ultivisual").setup({
     paste = {
       key = '<C-V>',
       modes = { 'v','n','i' }, -- 'v'; visual, 'n'; normal, 'i'; insert
+    },
+  },
+
+  -- The option settings for features here.
+  options = {
+    bracket = {
+      -- Ignore the indent when included while making bracket.
+      ignore_indent = true,
     },
   },
 })

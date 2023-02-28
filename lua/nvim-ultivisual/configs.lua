@@ -16,7 +16,7 @@ local default_options = {
   --
   features = {
     indent = true,
-    delimiter = true,
+    bracket = true,
     paste = true,
   },
 
@@ -32,7 +32,7 @@ local default_options = {
       modes = { 'v','n' }, -- 'v'; visual, 'n'; normal, 'i'; insert
     },
 
-    delimiter = {
+    bracket = {
       { key = '(', shape = { '(',')' } },
       { key = '[', shape = { '[',']' } },
       { key = '{', shape = { '{','}' } },
@@ -41,6 +41,14 @@ local default_options = {
     paste = {
       key = '<C-V>',
       modes = { 'v','n','i' }, -- 'v'; visual, 'n'; normal, 'i'; insert
+    },
+  },
+
+  -- The option settings for features here.
+  options = {
+    bracket = {
+      -- Ignore the indent when included while making bracket.
+      ignore_indent = true,
     },
   },
 }
