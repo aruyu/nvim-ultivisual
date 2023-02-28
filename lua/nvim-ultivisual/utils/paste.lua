@@ -35,13 +35,13 @@ function M.do_visual_paste()
 
   if #yanked == 1 then
     front_line = front_line .. yanked[1]
-    table.insert(cursor_pos, front_line:len())
+    table.insert(cursor_pos, front_line:len()+1)
     table.insert(lines_table, front_line .. back_line)
 
   else
     front_line = front_line .. yanked[1]
     back_line = yanked[#yanked] .. back_line
-    table.insert(cursor_pos, yanked[#yanked]:len())
+    table.insert(cursor_pos, yanked[#yanked]:len()+1)
 
     lines_table = yanked
     table.remove(lines_table, 1)
