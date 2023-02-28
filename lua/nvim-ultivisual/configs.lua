@@ -13,14 +13,16 @@ local M = {}
 
 -- Default options.
 local default_options = {
-  --
+  -- You can switch the ultimate visual features.
   features = {
     indent = true,
     bracket = true,
     paste = true,
   },
 
-  --
+  -- The keymap settings for features here.
+  -- key; mapped key
+  -- modes; included mode (include Visual mode for ultimate features!)
   keymaps = {
     make_indent = {
       key = '<TAB>',
@@ -33,6 +35,8 @@ local default_options = {
     },
 
     bracket = {
+      -- Only for 'v'; visual mode.
+      -- You can config the bracket shapes whatever you want.
       { key = '(', shape = { '(',')' } },
       { key = '[', shape = { '[',']' } },
       { key = '{', shape = { '{','}' } },
@@ -47,7 +51,7 @@ local default_options = {
   -- The option settings for features here.
   options = {
     bracket = {
-      -- Ignore the indent when included while making bracket.
+      -- Ignore the first line's indent when included while making bracket.
       ignore_indent = true,
     },
   },
