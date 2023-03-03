@@ -3,26 +3,38 @@
 [![Lua](https://img.shields.io/badge/Lua-blue.svg?style=for-the-badge&logo=lua)](http://www.lua.org)
 [![Neovim](https://img.shields.io/badge/Neovim-green.svg?style=for-the-badge&logo=neovim)](https://neovim.io)
 
+<div align='center'>
+
+```css
+      __  ______  _       _                  __
+     / / / / / /_(_)   __(_)______  ______ _/ /
+   / / / / / __/ / | / / / ___/ / / / __ `/ /
+ / /_/ / / /_/ /| |/ / (__  ) /_/ / /_/ / /
+\____/_/\__/_/ |___/_/____/\__,_/\__,_/_/
+```
+
 ### The Ultimate visual mode plugin for neovim written by Lua Script
+
+</div>
 
 ## Features
 
 1. Ultimate **indent** making.
-    - Whatever much times you wrote spaces, ***Ultivisual*** would make indent accurately.
-    - If you use *2 spaces* for tab, the plugin would change all the selected line as *2 spaces*. ***(1 space would be changed to 2 spaces!)***
-    - If you use *4 spaces* for tab, the plugin would cahnge all the selected line as *4 spaces*. ***(1~3 spaces would be changed to 4 spaces!)***
-    - Also noexpandtab supported.
-    - You can repeat to make indent as long as you don't deselect the line!
+  - Whatever much times you wrote spaces, ***Ultivisual*** would make indent accurately.
+  - If you use *2 spaces* for tab, the plugin would change all the selected line as *2 spaces*. ***(1 space would be changed to 2 spaces!)***
+  - If you use *4 spaces* for tab, the plugin would cahnge all the selected line as *4 spaces*. ***(1~3 spaces would be changed to 4 spaces!)***
+  - Also noexpandtab supported.
+  - You can repeat to make indent as long as you don't deselect the line!
 
 2. Ultimate **bracket** making.
-    - Just select the line by ***visual mode***, and push key to bracket the selected line!
-    - You can set the pair of ***bracket shapes*** whatever you want.
-    - Optionally, you can set to ignore the indent of the start line.
-    - At last, the cursor would automatically move to ***the end of the bracket***.
+  - Just select the line by ***visual mode***, and push key to bracket the selected line!
+  - You can set the pair of ***bracket shapes*** whatever you want.
+  - Optionally, you can set to ignore the indent of the start line.
+  - At last, the cursor would automatically move to ***the end of the bracket***.
 
-3. Ultimate yank **paste**
-    - This feature makes that you can paste copied lines as you ***intended***.
-    - At last, the cursor would automatically move to ***the end of the pasted line***.
+3. Ultimate yank **paste**.
+  - This feature makes that you can paste copied lines as you ***intended***.
+  - At last, the cursor would automatically move to ***the end of the pasted line***.
 
 ## Installation
 

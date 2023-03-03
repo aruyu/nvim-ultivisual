@@ -1,2 +1,147 @@
-Opps, sorry...
-preparing!
+*nvim-ultivisual*          The Ultimate visual mode plugin written by Lua Script
+
+   __  ______  _       _                  __
+  / / / / / /_(_)   __(_)______  ______ _/ /
+ / / / / / __/ / | / / / ___/ / / / __ `/ /
+/ /_/ / / /_/ /| |/ / (__  ) /_/ / /_/ / /
+\____/_/\__/_/ |___/_/____/\__,_/\__,_/_/
+
+================================================================================
+Contents                                              *nvim-ultivisual-contents*
+
+  Contents....................................... |nvim-ultivisual-contents|
+  Introduction................................... |nvim-ultivisual-introduction|
+  Setup.......................................... |nvim-ultivisual-setup|
+  License........................................ |nvim-ultivisual-license|
+
+================================================================================
+Introduction                                      *nvim-ultivisual-introduction*
+
+This plugin makes convenient to use visual mode for neovim editor.
+The features are in below.
+
+1. Ultimate indent making.
+    - Make indent accurately.
+    - Also noexpandtab supported.
+    - You can repeat to make indent as long as you don't deselect the line!
+
+2. Ultimate bracket making.
+    - You can set the pair of ***bracket shapes*** whatever you want.
+    - Optionally, you can set to ignore the indent of the start line.
+    - Move the cursor to the end of the bracket.
+
+3. Ultimate yank paste.
+    - This feature makes that you can paste copied lines as you intended.
+    - Move the cursor to the end of the pasted line.
+
+================================================================================
+Setup                                                    *nvim-ultivisual-setup*
+
+To use nvim-ultivisual plugin, you have to call the setup function.
+The code in below is the default options.
+
+Example:
+>
+    -- Default options.
+    require("nvim-ultivisual").setup({
+      features = {
+        indent = true,
+        bracket = true,
+        paste = true,
+      },
+
+      keymaps = {
+        make_indent = {
+          key = '<TAB>',
+          modes = { 'v','n' },
+        },
+
+        delete_indent = {
+          key = '<S-TAB>',
+          modes = { 'v','n' },
+        },
+
+        bracket = {
+          { key = '(', shape = { '(',')' } },
+          { key = '[', shape = { '[',']' } },
+          { key = '{', shape = { '{','}' } },
+        },
+
+        paste = {
+          key = '<C-V>',
+          modes = { 'v','n','i' },
+        },
+      },
+
+      options = {
+        bracket = {
+          ignore_indent = true,
+        },
+      },
+    })
+<
+
+*nvim-ultivisual.features*
+Enable or disable the plugin's features.
+
+    *nvim-ultivisual.features.indent*
+    Switch whether use ultivisual indent or not.
+      Type: `boolean`, Default: `true`
+
+    *nvim-ultivisual.features.bracket*
+    Switch whether use ultivisual bracket or not.
+      Type: `boolean`, Default: `true`
+
+    *nvim-ultivisual.features.paste*
+    Switch whether use ultivisual paste or not.
+      Type: `boolean`, Default: `true`
+
+*nvim-ultivisual.keymaps*
+Map the keys for ultivisual features.
+
+    *nvim-ultivisual.keymaps.make_indent*
+    (only if |features.indent| is `true`)
+
+        *nvim-ultivisual.keymaps.~.key*
+        *nvim-ultivisual.keymaps.~.modes*
+
+    *nvim-ultivisual.keymaps.delete_indent*
+        *nvim-ultivisual.keymaps.delete_indent.key*
+        *nvim-ultivisual.keymaps.delete_indent.modes*
+
+    *nvim-ultivisual.keymaps.bracket*
+    *nvim-ultivisual.keymaps.paste*
+
+*nvim-ultivisual.options*
+    *nvim-ultivisual.options.bracket.ignore_indent*
+
+
+================================================================================
+LICENSE                                                *nvim-ultivisual-license*
+>
+  MIT License
+
+  Copyright (c) 2023 Eira Chae
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+<
+
+================================================================================
+
+vim:tw=78:ts=8:noet:ft=help:norl:
