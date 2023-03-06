@@ -118,11 +118,11 @@ Map the keys and specific modes for ultivisual features.
     - 1~3 space would be changed to 4 spaces!
 
         *nvim-ultivisual.keymaps.make_indent.key*
-	Set the key for making indent feature.
+        Set the key for making indent feature.
           Type: `string`, Default: `'<TAB>'`
 
         *nvim-ultivisual.keymaps.make_indent.modes*
-	Specify the modes for making indent feature.
+        Specify the modes for making indent feature.
           Type: `{string}`, Default: `{ 'v','n' }`
 
     *nvim-ultivisual.keymaps.delete_indent*
@@ -130,11 +130,11 @@ Map the keys and specific modes for ultivisual features.
     (only if |features.indent| is `true`)
 
         *nvim-ultivisual.keymaps.delete_indent.key*
-	Set the key for deleting indent feature.
+        Set the key for deleting indent feature.
           Type: `string`, Default: `'<S-TAB>'`
 
         *nvim-ultivisual.keymaps.delete_indent.modes*
-	Specify the modes for deleting indent feature.
+        Specify the modes for deleting indent feature.
           Type: `{string}`, Default: `{ 'v','n' }`
 
     *nvim-ultivisual.keymaps.brackets*
@@ -142,9 +142,9 @@ Map the keys and specific modes for ultivisual features.
     (only if |features.brackets| is `true`)
       Type: `table`, Default:
         `{`
-	  `{ key = '(', shapes = { '(',')' } },`
-	  `{ key = '{', shapes = { '{','}' } },`
-	`}`
+          `{ key = '(', shapes = { '(',')' } },`
+          `{ key = '{', shapes = { '{','}' } },`
+        `}`
     - The table needs |key| which includes one arguments.
     - The table needs |shapes| which includes table set by two arguments.
     - You can set the brackets' shape whatever you want to use.
@@ -154,11 +154,11 @@ Map the keys and specific modes for ultivisual features.
     (only if |features.paste| is `true`)
 
         *nvim-ultivisual.keymaps.paste.key*
-	Set the key for paste yanked line(s).
+        Set the key for paste yanked line(s).
           Type: `string`, Default: `'<C-V>'`
 
         *nvim-ultivisual.keymaps.paste.modes*
-	Specify the modes for paste yanked line(s).
+        Specify the modes for paste yanked line(s).
           Type: `{string}`, Default: `{ 'v','n','i' }`
 
 *nvim-ultivisual.options*
