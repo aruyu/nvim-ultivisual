@@ -21,8 +21,7 @@
 
 1. Ultimate **indent** making.
     - Whatever much times you wrote spaces, ***Ultivisual*** would make indent accurately.
-    - If you use *2 spaces* for tab, the plugin would change all the selected line as *2 spaces*. ***(1 space would be changed to 2 spaces!)***
-    - If you use *4 spaces* for tab, the plugin would cahnge all the selected line as *4 spaces*. ***(1~3 spaces would be changed to 4 spaces!)***
+    - As your *'shiftwidth'* setting, the plugin would change all the selected lines. ***(change accurately according to 'shiftwidth')***
     - Also noexpandtab supported.
     - You can repeat to make indent as long as you don't deselect the line!
 
