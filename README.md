@@ -26,11 +26,11 @@
   - Also noexpandtab supported.
   - You can repeat to make indent as long as you don't deselect the line!
 
-2. Ultimate **bracket** making.
-  - Just select the line by ***visual mode***, and push key to bracket the selected line!
-  - You can set the pair of ***bracket shapes*** whatever you want.
+2. Ultimate **brackets** making.
+  - Just select the line by ***visual mode***, and push key to brackets the selected line!
+  - You can set the pair of ***brackets' shape*** whatever you want.
   - Optionally, you can set to ignore the indent of the start line.
-  - At last, the cursor would automatically move to ***the end of the bracket***.
+  - At last, the cursor would automatically move to ***the end of the brackets***.
 
 3. Ultimate yank **paste**.
   - This feature makes that you can paste copied lines as you ***intended***.
@@ -66,7 +66,7 @@ require("nvim-ultivisual").setup({
   -- You can switch the ultimate visual features.
   features = {
     indent = true,
-    bracket = true,
+    brackets = true,
     paste = true,
   },
 
@@ -84,12 +84,11 @@ require("nvim-ultivisual").setup({
       modes = { 'v','n' }, -- 'v'; visual, 'n'; normal, 'i'; insert
     },
 
-    bracket = {
+    brackets = {
       -- Only for 'v'; visual mode.
-      -- You can config the bracket shapes whatever you want.
-      { key = '(', shape = { '(',')' } },
-      { key = '[', shape = { '[',']' } },
-      { key = '{', shape = { '{','}' } },
+      -- You can config the brackets' shape whatever you want.
+      { key = '(', shapes = { '(',')' } },
+      { key = '{', shapes = { '{','}' } },
     },
 
     paste = {
@@ -100,8 +99,8 @@ require("nvim-ultivisual").setup({
 
   -- The option settings for features here.
   options = {
-    bracket = {
-      -- Ignore the first line's indent when included while making bracket.
+    brackets = {
+      -- Ignore the first line's indent when included while making brackets.
       ignore_indent = true,
     },
   },

@@ -1,10 +1,10 @@
 *nvim-ultivisual*          The Ultimate visual mode plugin written by Lua Script
 
-   __  ______  _       _                  __
-  / / / / / /_(_)   __(_)______  ______ _/ /
- / / / / / __/ / | / / / ___/ / / / __ `/ /
-/ /_/ / / /_/ /| |/ / (__  ) /_/ / /_/ / /
-\____/_/\__/_/ |___/_/____/\__,_/\__,_/_/
+                     __  ______  _       _                  __
+                    / / / / / /_(_)   __(_)______  ______ _/ /
+                   / / / / / __/ / | / / / ___/ / / / __ `/ /
+                  / /_/ / / /_/ /| |/ / (__  ) /_/ / /_/ / /
+                  \____/_/\__/_/ |___/_/____/\__,_/\__,_/_/
 
 ================================================================================
 Contents                                              *nvim-ultivisual-contents*
@@ -25,10 +25,10 @@ The features are in below.
     - Also noexpandtab supported.
     - You can repeat to make indent as long as you don't deselect the line!
 
-2. Ultimate bracket making.
-    - You can set the pair of ***bracket shapes*** whatever you want.
+2. Ultimate brackets making.
+    - You can set the pair of ***brackets' shape*** whatever you want.
     - Optionally, you can set to ignore the indent of the start line.
-    - Move the cursor to the end of the bracket.
+    - Move the cursor to the end of the brackets.
 
 3. Ultimate yank paste.
     - This feature makes that you can paste copied lines as you intended.
@@ -46,7 +46,7 @@ Example:
     require("nvim-ultivisual").setup({
       features = {
         indent = true,
-        bracket = true,
+        brackets = true,
         paste = true,
       },
 
@@ -61,10 +61,9 @@ Example:
           modes = { 'v','n' },
         },
 
-        bracket = {
-          { key = '(', shape = { '(',')' } },
-          { key = '[', shape = { '[',']' } },
-          { key = '{', shape = { '{','}' } },
+        brackets = {
+          { key = '(', shapes = { '(',')' } },
+          { key = '{', shapes = { '{','}' } },
         },
 
         paste = {
@@ -74,7 +73,7 @@ Example:
       },
 
       options = {
-        bracket = {
+        brackets = {
           ignore_indent = true,
         },
       },
@@ -88,8 +87,8 @@ Enable or disable the plugin's features.
     Switch whether use ultivisual indent or not.
       Type: `boolean`, Default: `true`
 
-    *nvim-ultivisual.features.bracket*
-    Switch whether use ultivisual bracket or not.
+    *nvim-ultivisual.features.brackets*
+    Switch whether use ultivisual brackets or not.
       Type: `boolean`, Default: `true`
 
     *nvim-ultivisual.features.paste*
@@ -97,23 +96,76 @@ Enable or disable the plugin's features.
       Type: `boolean`, Default: `true`
 
 *nvim-ultivisual.keymaps*
-Map the keys for ultivisual features.
+Map the keys and specific modes for ultivisual features.
 
     *nvim-ultivisual.keymaps.make_indent*
+    Make indent accurately when you push what you mapped in specific modes.
     (only if |features.indent| is `true`)
 
-        *nvim-ultivisual.keymaps.~.key*
-        *nvim-ultivisual.keymaps.~.modes*
+    This process would change all the selected line as `shiftwidth` size.
+>
+    vim.opt.shiftwidth = 2
+    or
+    set shiftwidth=2
+<
+    - 1 space would be changed to 2 spaces!
+
+>
+    vim.opt.shiftwidth = 4
+    or
+    set shiftwidth 4
+<
+    - 1~3 space would be changed to 4 spaces!
+
+        *nvim-ultivisual.keymaps.make_indent.key*
+	Set the key for making indent feature.
+          Type: `string`, Default: `'<TAB>'`
+
+        *nvim-ultivisual.keymaps.make_indent.modes*
+	Specify the modes for making indent feature.
+          Type: `{string}`, Default: `{ 'v','n' }`
 
     *nvim-ultivisual.keymaps.delete_indent*
-        *nvim-ultivisual.keymaps.delete_indent.key*
-        *nvim-ultivisual.keymaps.delete_indent.modes*
+    Delete indent accurately when you push what you mapped in specific modes.
+    (only if |features.indent| is `true`)
 
-    *nvim-ultivisual.keymaps.bracket*
+        *nvim-ultivisual.keymaps.delete_indent.key*
+	Set the key for deleting indent feature.
+          Type: `string`, Default: `'<S-TAB>'`
+
+        *nvim-ultivisual.keymaps.delete_indent.modes*
+	Specify the modes for deleting indent feature.
+          Type: `{string}`, Default: `{ 'v','n' }`
+
+    *nvim-ultivisual.keymaps.brackets*
+    Make brackets accurately when you push what you mapped in specific modes.
+    (only if |features.brackets| is `true`)
+      Type: `table`, Default:
+        `{`
+	  `{ key = '(', shapes = { '(',')' } },`
+	  `{ key = '{', shapes = { '{','}' } },`
+	`}`
+    - The table needs |key| which includes one arguments.
+    - The table needs |shapes| which includes table set by two arguments.
+    - You can set the brackets' shape whatever you want to use.
+
     *nvim-ultivisual.keymaps.paste*
+    Paste accurately when you push what you mapped in specific modes.
+    (only if |features.paste| is `true`)
+
+        *nvim-ultivisual.keymaps.paste.key*
+	Set the key for paste yanked line(s).
+          Type: `string`, Default: `'<C-V>'`
+
+        *nvim-ultivisual.keymaps.paste.modes*
+	Specify the modes for paste yanked line(s).
+          Type: `{string}`, Default: `{ 'v','n','i' }`
 
 *nvim-ultivisual.options*
-    *nvim-ultivisual.options.bracket.ignore_indent*
+    *nvim-ultivisual.options.brackets.ignore_indent*
+    Switch whether ignore all indents or not when you make brackets.
+    (only if |features.brackets| is `true`)
+      Type: `boolean`, Default: `true`
 
 
 ================================================================================

@@ -1,5 +1,5 @@
 --[[
--   NOTE      - bracket.lua
+-   NOTE      - brackets.lua
 -   Author    - Asta
 -
 -   Created   - 2023.02.27
@@ -16,7 +16,7 @@ local keyset = vim.keymap.set
 local noremap_opt = { noremap = true }
 
 
-function M.make_group_bracket(front_character, back_character, options)
+function M.make_group_brackets(front_character, back_character, options)
   options = options or false
 
   local line_start = vim.fn.line("'<")
@@ -81,16 +81,16 @@ function M.set_keymaps(keymaps, options)
   if options.ignore_indent == false then
     for _, keymap in ipairs(keymaps) do
       keyset('v', keymap.key,
-        ':<ESC>:lua require("nvim-ultivisual.utils.bracket").make_group_bracket("' ..
-        keymap.shape[1] .. '","' .. keymap.shape[2] .. '")<CR>',
+        ':<ESC>:lua require("nvim-ultivisual.utils.brackets").make_group_brackets("' ..
+        keymap.shapes[1] .. '","' .. keymap.shapes[2] .. '")<CR>',
         noremap_opt
       )
     end
   else
     for _, keymap in ipairs(keymaps) do
       keyset('v', keymap.key,
-        ':<ESC>:lua require("nvim-ultivisual.utils.bracket").make_group_bracket("' ..
-        keymap.shape[1] .. '","' .. keymap.shape[2] .. '",true)<CR>',
+        ':<ESC>:lua require("nvim-ultivisual.utils.brackets").make_group_brackets("' ..
+        keymap.shapes[1] .. '","' .. keymap.shapes[2] .. '",true)<CR>',
         noremap_opt
       )
     end

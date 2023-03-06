@@ -16,7 +16,7 @@ local default_options = {
   -- You can switch the ultimate visual features.
   features = {
     indent = true,
-    bracket = true,
+    brackets = true,
     paste = true,
   },
 
@@ -34,12 +34,11 @@ local default_options = {
       modes = { 'v','n' }, -- 'v'; visual, 'n'; normal, 'i'; insert
     },
 
-    bracket = {
+    brackets = {
       -- Only for 'v'; visual mode.
-      -- You can config the bracket shapes whatever you want.
-      { key = '(', shape = { '(',')' } },
-      { key = '[', shape = { '[',']' } },
-      { key = '{', shape = { '{','}' } },
+      -- You can config the brackets' shape whatever you want.
+      { key = '(', shapes = { '(',')' } },
+      { key = '{', shapes = { '{','}' } },
     },
 
     paste = {
@@ -50,8 +49,8 @@ local default_options = {
 
   -- The option settings for features here.
   options = {
-    bracket = {
-      -- Ignore the first line's indent when included while making bracket.
+    brackets = {
+      -- Ignore the first line's indent when included while making brackets.
       ignore_indent = true,
     },
   },

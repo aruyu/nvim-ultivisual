@@ -11,7 +11,7 @@
 
 local configs = require("nvim-ultivisual.configs")
 local indent_utils = require("nvim-ultivisual.utils.indent")
-local bracket_utils = require("nvim-ultivisual.utils.bracket")
+local brackets_utils = require("nvim-ultivisual.utils.brackets")
 local paste_utils = require("nvim-ultivisual.utils.paste")
 local M = {}
 
@@ -22,8 +22,8 @@ function M.setup(opt)
   if configs.features.indent == true then
     indent_utils.set_keymaps(configs.keymaps.make_indent, configs.keymaps.delete_indent)
   end
-  if configs.features.bracket == true then
-    bracket_utils.set_keymaps(configs.keymaps.bracket, configs.options.bracket)
+  if configs.features.brackets == true then
+    brackets_utils.set_keymaps(configs.keymaps.brackets, configs.options.brackets)
   end
   if configs.features.paste == true then
     paste_utils.set_keymaps(configs.keymaps.paste)
