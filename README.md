@@ -20,21 +20,21 @@
 ## Features
 
 1. Ultimate **indent** making.
-  - Whatever much times you wrote spaces, ***Ultivisual*** would make indent accurately.
-  - If you use *2 spaces* for tab, the plugin would change all the selected line as *2 spaces*. ***(1 space would be changed to 2 spaces!)***
-  - If you use *4 spaces* for tab, the plugin would cahnge all the selected line as *4 spaces*. ***(1~3 spaces would be changed to 4 spaces!)***
-  - Also noexpandtab supported.
-  - You can repeat to make indent as long as you don't deselect the line!
+    - Whatever much times you wrote spaces, ***Ultivisual*** would make indent accurately.
+    - If you use *2 spaces* for tab, the plugin would change all the selected line as *2 spaces*. ***(1 space would be changed to 2 spaces!)***
+    - If you use *4 spaces* for tab, the plugin would cahnge all the selected line as *4 spaces*. ***(1~3 spaces would be changed to 4 spaces!)***
+    - Also noexpandtab supported.
+    - You can repeat to make indent as long as you don't deselect the line!
 
 2. Ultimate **brackets** making.
-  - Just select the line by ***visual mode***, and push key to brackets the selected line!
-  - You can set the pair of ***brackets' shape*** whatever you want.
-  - Optionally, you can set to ignore the indent of the start line.
-  - At last, the cursor would automatically move to ***the end of the brackets***.
+    - Just select the line by ***visual mode***, and push key to brackets the selected line!
+    - You can set the pair of ***brackets' shape*** whatever you want.
+    - Optionally, you can set to ignore the indent of the start line.
+    - At last, the cursor would automatically move to ***the end of the brackets***.
 
 3. Ultimate yank **paste**.
-  - This feature makes that you can paste copied lines as you ***intended***.
-  - At last, the cursor would automatically move to ***the end of the pasted line***.
+    - This feature makes that you can paste copied lines as you ***intended***.
+    - At last, the cursor would automatically move to ***the end of the pasted line***.
 
 ## Installation
 
