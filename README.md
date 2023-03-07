@@ -14,7 +14,8 @@
 ```
 
 ### The Ultimate visual mode plugin for neovim written by Lua Script
-![main](https://user-images.githubusercontent.com/75081360/223304045-eda470f0-7d7c-4422-9afb-87725ca0c111.gif)
+
+![main](https://user-images.githubusercontent.com/75081360/223333562-0f954e54-44be-450b-acac-9396261e925b.gif)
 
 </div>
 
