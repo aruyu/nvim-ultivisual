@@ -14,6 +14,7 @@
 ```
 
 ### The Ultimate visual mode plugin for neovim written by Lua Script
+![main](https://user-images.githubusercontent.com/75081360/223304045-eda470f0-7d7c-4422-9afb-87725ca0c111.gif)
 
 </div>
 
@@ -25,15 +26,21 @@
     - Also noexpandtab supported.
     - You can repeat to make indent as long as you don't deselect the line!
 
+https://user-images.githubusercontent.com/75081360/223304085-dff6c9e2-145d-4975-ace3-e4f727da0056.mp4
+
 2. Ultimate **brackets** making.
     - Just select the line by ***visual mode***, and push key to brackets the selected line!
     - You can set the pair of ***brackets' shape*** whatever you want.
     - Optionally, you can set to ignore the indent of the start line.
     - At last, the cursor would automatically move to ***the end of the brackets***.
 
+https://user-images.githubusercontent.com/75081360/223304118-abfd88f1-f854-4a3c-9291-c2807c24599e.mp4
+
 3. Ultimate yank **paste**.
     - This feature makes that you can paste copied lines as you ***intended***.
     - At last, the cursor would automatically move to ***the end of the pasted line***.
+
+https://user-images.githubusercontent.com/75081360/223304150-fc7abeb8-c150-40dc-bdfb-11e6bf540278.mp4
 
 ## Installation
 
