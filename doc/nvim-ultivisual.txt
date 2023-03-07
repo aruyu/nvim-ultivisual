@@ -26,7 +26,7 @@ The features are in below.
     - You can repeat to make indent as long as you don't deselect the line!
 
 2. Ultimate brackets making.
-    - You can set the pair of ***brackets' shape*** whatever you want.
+    - You can set the pair of brackets' shape whatever you want.
     - Optionally, you can set to ignore the indent of the start line.
     - Move the cursor to the end of the brackets.
 
