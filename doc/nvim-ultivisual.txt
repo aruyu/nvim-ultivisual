@@ -102,7 +102,7 @@ Map the keys and specific modes for ultivisual features.
     Make indent accurately when you push what you mapped in specific modes.
     (only if |features.indent| is `true`)
 
-    This process would change all the selected line as `shiftwidth` size.
+    This process would make indent all the selected line as `shiftwidth` size.
 >
     vim.opt.shiftwidth = 2
     or
