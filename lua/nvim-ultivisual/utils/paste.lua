@@ -1,9 +1,9 @@
 --[[
 -   NOTE      - paste.lua
--   Author    - Asta
+-   Author    - Aru
 -
 -   Created   - 2023.02.27
--   Github    - https://github.com/astaos
+-   Github    - https://github.com/aruyu
 -   Contact   - vine9151@gmail.com
 ]]
 

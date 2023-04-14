@@ -49,7 +49,7 @@ https://user-images.githubusercontent.com/75081360/223304150-fc7abeb8-c150-40dc-
 
 ```lua
 use {
-  'astaos/nvim-ultivisual',
+  'aruyu/nvim-ultivisual',
   config = function() require("nvim-ultivisual").setup() end,
 }
 ```
@@ -57,7 +57,7 @@ use {
 ### [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'astaos/nvim-ultivisual'
+Plug 'aruyu/nvim-ultivisual'
 lua << EOF
   require("nvim-ultivisual").setup()
 EOF
