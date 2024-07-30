@@ -75,6 +75,9 @@ require("nvim-ultivisual").setup({
     indent = true,
     brackets = true,
     paste = true,
+    copy = true,
+    cut = true,
+    delete = true,
   },
 
   -- The keymap settings for features here.
@@ -101,6 +104,21 @@ require("nvim-ultivisual").setup({
     paste = {
       key = '<C-V>',
       modes = { 'v','n','i' }, -- 'v'; visual, 'n'; normal, 'i'; insert
+    },
+
+    copy = {
+      -- Only for 'v'; visual mode.
+      key = '<C-C>',
+    },
+
+    cut = {
+      -- Only for 'v'; visual mode.
+      key = '<C-X>',
+    },
+
+    delete = {
+      -- Only for 'i'; insert mode.
+      key = { '', '<C-BS>', '<C-BS>' },
     },
   },
 

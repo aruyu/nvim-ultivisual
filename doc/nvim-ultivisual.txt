@@ -48,6 +48,9 @@ Example:
         indent = true,
         brackets = true,
         paste = true,
+        copy = true,
+        cut = true,
+        delete = true,
       },
 
       keymaps = {
@@ -69,6 +72,18 @@ Example:
         paste = {
           key = '<C-V>',
           modes = { 'v','n','i' },
+        },
+
+        copy = {
+          key = '<C-C>',
+        },
+
+        cut = {
+          key = '<C-X>',
+        },
+
+        delete = {
+          key = { '', '<C-BS>', '<C-BS>' },
         },
       },
 
