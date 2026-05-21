@@ -81,16 +81,16 @@ function M.set_keymaps(keymaps, options)
   if options.ignore_indent == false then
     for _, keymap in ipairs(keymaps) do
       keyset('v', keymap.key,
-        ':<ESC>:lua require("nvim-ultivisual.utils.brackets").make_group_brackets("' ..
-        keymap.shapes[1] .. '","' .. keymap.shapes[2] .. '")<CR>',
+        ':<ESC>:lua require("nvim-ultivisual.utils.brackets").make_group_brackets([[' ..
+        keymap.shapes[1] .. ']],[[' .. keymap.shapes[2] .. ']])<CR>',
         noremap_opt
       )
     end
   else
     for _, keymap in ipairs(keymaps) do
       keyset('v', keymap.key,
-        ':<ESC>:lua require("nvim-ultivisual.utils.brackets").make_group_brackets("' ..
-        keymap.shapes[1] .. '","' .. keymap.shapes[2] .. '",true)<CR>',
+        ':<ESC>:lua require("nvim-ultivisual.utils.brackets").make_group_brackets([[' ..
+        keymap.shapes[1] .. ']],[[' .. keymap.shapes[2] .. ']],true)<CR>',
         noremap_opt
       )
     end
